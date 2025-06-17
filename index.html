@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Per Roman</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      background-color: #fff0f5;
+      margin: 0;
+      padding: 0;
+    }
+    section {
+      display: none;
+      padding: 60px 20px;
+      min-height: 100vh;
+    }
+    section.active {
+      display: block;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      cursor: pointer;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    .finale-box {
+      max-width: 700px;
+      margin: auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Schermata 1 -->
+  <section id="step1" class="active">
+    <h1>Schiacciami se ami Roman</h1>
+    <button onclick="nextStep(2)">Schiacciami</button>
+  </section>
+
+  <!-- Schermata 2 -->
+  <section id="step2">
+    <h2>Aaah quindi lo ami, beh... lui ha una cosa da dirti</h2>
+    <p>Se la vuoi scoprire schiacciami</p>
+    <button onclick="nextStep(3)">Schiacciami</button>
+  </section>
+
+  <!-- Schermata 3 -->
+  <section id="step3">
+    <h2>Dai se lo ami davvero</h2>
+    <p>Schiacciami un'altra volta</p>
+    <button onclick="nextStep(4)">Schiacciami</button>
+  </section>
+
+  <!-- Schermata 4 -->
+  <section id="step4">
+    <h2>Dai adesso te lo dico, promesso</h2>
+    <p>Schiacciami</p>
+    <button onclick="nextStep(5)">Schiacciami</button>
+  </section>
+
+  <!-- Messaggio finale -->
+  <section id="step5">
+    <div class="finale-box">
+      <h1>Per te ❤️</h1>
+      <p>
+        Un mese e mezzo può sembrare poco, ma con te è stato abbastanza per farmi capire quanto può essere intenso anche il tempo più breve, se condiviso con la persona giusta.<br><br>
+        Ogni momento con te ha un sapore diverso, più vero, più pieno. Mi piace perdermi nei tuoi occhi, ridere con te, conoscerti un po’ di più ogni giorno.<br><br>
+        Non so cosa ci riserverà il futuro, ma so che questo inizio è stato bellissimo…<br><br>
+        e non vedo l’ora di continuare a costruire qualcosa insieme.<br><br>
+        <strong>Grazie per essere te.</strong>
+      </p>
+    </div>
+  </section>
+
+  <script>
+    function nextStep(stepNumber) {
+      document.querySelectorAll('section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById('step' + stepNumber).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
